@@ -1,0 +1,14 @@
+objects := RPN.o main.o
+all: lab2RPN
+
+RPN.o: RPN.cpp RPN.h
+	g++ -c $< -o $@
+
+main.o: main.cpp
+	g++ -c $< -o $@
+
+lab2RPN: $(objects)
+	g++ -o $@ $(objects)
+
+clean:
+	rm *.o lab2RPN
