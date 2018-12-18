@@ -8,3 +8,5 @@ make -f makefile.txt
 lab2RPN.exe
 # Проверить правильность вычисления
 24 * 20+12-3 * 2=486 в ОПЗ будет выглядеть 24 20 * 12 + 3 2 * -
+# Преобразование выражений в ОПЗ
+http://primat.org/news/obratnaja_polskaja_zapis/2016-04-09-1181
