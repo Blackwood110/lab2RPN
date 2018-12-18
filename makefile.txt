@@ -11,4 +11,4 @@ lab2RPN: $(objects)
 	g++ -o $@ $(objects)
 
 clean:
-	rm *.o lab2RPN
+	rm *.o *.exe lab2RPN
