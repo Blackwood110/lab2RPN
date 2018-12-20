@@ -3,7 +3,6 @@
 #include "RPN.h"
 using namespace std;
 
-
 int main()
 {
 	RPN newRPN = RPN();
@@ -11,6 +10,11 @@ int main()
 
 	cout << "Enter expression in postfix RPN: \n";
 	getline(cin, expression);
+	if (newRPN.stringIsEmpty(expression))
+	{
+		cout << "string is empty \n";
+		return 0;
+	}
 
 	int result = newRPN.counting(expression);
 

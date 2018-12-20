@@ -1,5 +1,6 @@
 #include <string>
 #include <stack>
+#include <iostream>   
 #pragma once
 
 using namespace std;
@@ -10,6 +11,7 @@ public:
 	~RPN();
 
 	int counting(string expression);
+	bool stringIsEmpty(string str);
 
 private:
 	bool isDelimeter(char c);

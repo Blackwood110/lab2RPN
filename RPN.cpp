@@ -16,7 +16,6 @@ int RPN::counting(string expression)
 
 	for (int i = 0; i < expression.size(); i++)
 	{
-		char symbol = expression[i];
 		if (isDigit(expression[i]))
 		{
 			string number = "";
@@ -29,15 +28,16 @@ int RPN::counting(string expression)
 			}
 			newStack.push(stoi(number));
 			i--;
-		} 
-		else if (isOperator(expression[i])) 
+		}
+		else if (isOperator(expression[i]))
 		{
+			if (newStack.size() < 3) { cout << "Invalid expression format, insufficient operands"; exit(0); }
 			int x = newStack.top();
 			newStack.pop();
 			int y = newStack.top();
 			newStack.pop();
 			if (expression[i] == '+') result = y + x;
-			else if (expression[i] == '-') result = y - x; 
+			else if (expression[i] == '-') result = y - x;
 			else result = y * x;
 			newStack.push(result);
 		}
@@ -45,6 +45,15 @@ int RPN::counting(string expression)
 	result = newStack.top();
 	newStack.pop();
 	return result;
+}
+
+bool RPN::stringIsEmpty(string str)
+{
+	for (int i = 0; i < str.size(); i++)
+	{
+		if (!isspace(str[i])) return false;
+	}
+	return true;
 }
 
 bool RPN::isDelimeter(char c)
