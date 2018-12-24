@@ -31,7 +31,7 @@ int RPN::counting(string expression)
 		}
 		else if (isOperator(expression[i]))
 		{
-			if (newStack.size() < 3) { cout << "Invalid expression format, insufficient operands"; exit(0); }
+			if (newStack.size() < 2) { cout << "Invalid expression format, insufficient operands"; exit(0); }
 			int x = newStack.top();
 			newStack.pop();
 			int y = newStack.top();
